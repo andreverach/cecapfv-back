@@ -60,6 +60,10 @@ Route::post('person-classrooms/search',  [PersonClassroomsController::class, 'se
 Route::get('person-classrooms/students-list/{classroom}',  [PersonClassroomsController::class, 'students_list'])
     ->name('api.person-classrooms.students-list');
 
+//assistances
+Route::get('assistances/student/{student}/class/{classroom}',  [AssistanceController::class, 'record_student_classroom'])
+    ->name('api.assistances.record-student-classroom');
+
 
 //rutas basic api
 Route::apiResource('courses', CourseController::class);

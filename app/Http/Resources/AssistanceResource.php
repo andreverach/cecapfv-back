@@ -38,6 +38,11 @@ class AssistanceResource extends JsonResource
                     'id' => $this->classroom->center->id,
                     'description' => $this->classroom->center->description,
                 ],
+                'professor' => [
+                    'id' => $this->classroom->person->id,
+                    'firstName' => $this->classroom->person->firstName,
+                    'lastName' => $this->classroom->person->lastName,
+                ],
             ],
         ];
     }

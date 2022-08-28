@@ -52,4 +52,25 @@ class AssistanceController extends Controller
             "data" => $assistance,
         ], 200);
     }
+
+    public function record_student_classroom(Request $request){
+        $recordAssistances = Assistance::select(
+            'assistances.id as id',
+            'assistances.date as date',
+            'assistances.attend as attend',
+            'assistances.person_id as person_id',
+            'assistances.classroom_id as classroom_id',
+            'assistances.active as active',
+            'assistances.created_at as created_at',
+            'assistances.updated_at as updated_at',
+            'persons.id as person_id',
+            'classrooms.id as classroom_id',
+        )
+        ->join('persons', 'persons.id', '=', 'assistances.person_id')
+        ->join('classrooms', 'classrooms.id', '=', 'assistances.classroom_id')
+        ->where(['assistances.person_id' => $request->student, 'assistances.classroom_id' => $request->classroom])
+        ->orderByDesc('assistances.date')
+        ->get();
+        return new AssistanceCollection($recordAssistances); 
+    }
 }
