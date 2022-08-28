@@ -1,0 +1,20 @@
+https://cecapfv.herokuapp.com/
+
+mysql://
+b707c4da9e2902    -user
+:
+1dc15b11   -clave
+@
+us-cdbr-east-06.cleardb.net    -host
+/
+heroku_74370a2315d2c7a     -db
+?reconnect=true
+
+APP_DEBUG=true
+APP_KEY=base64:FA+4Rq98bikrSVqnuUJ0yNBdTXLHQpAMkpirXbTEjKY=
+DB_CONNECTION=mysql
+DB_DATABASE=heroku_74370a2315d2c7a
+DB_HOST=us-cdbr-east-06.cleardb.net
+DB_USERNAME=b707c4da9e2902
+DB_PASSWORD=1dc15b11
+DB_PORT=3306
