@@ -16,4 +16,4 @@ yarn-error.log
 /.vscode
 
 # aditional
-composer.lock
+#composer.lock
